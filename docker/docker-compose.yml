@@ -1,0 +1,18 @@
+version: "3"
+
+#  Postgres database
+services:
+
+  core-db:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: core
+    networks:
+      - core-local-network
+
+networks:
+  core-local-network:
